@@ -12,9 +12,9 @@ public class Deck {
 	
 	public Deck()
 	{
-		//TODO: Implement This Constructor (no-arg Deck should build up a deck with 52 cards)
-		
-		//	This method will do a for/each, returning each rank in the enum.
+		//Finish: Implement This Constructor (no-arg Deck should build up a deck with 52 cards)
+		this.DeckID = UUID.randomUUID();
+		//This method will do a for/each, returning each rank in the enum.
 		for (eRank Rank : eRank.values()) {
 			System.out.println(Rank.getiRankNbr());
 		}
@@ -22,8 +22,8 @@ public class Deck {
 	
 	public Card DrawCard()
 	{
-		//	TODO: Implement this method... should draw a card from the deck.
+		//Finish: Implement this method... should draw a card from the deck.
 		
-		return null;
+		return DeckCards.remove(0);
 	}
 }
