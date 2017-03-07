@@ -180,14 +180,15 @@ public class Hand {
 
 		ArrayList<Card> kickers = new ArrayList<Card>();
 
-		if ((h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank() == h.getCardsInHand()
-				.get(eCardNo.SecondCard.getCardNo()).geteRank())
-				&& (h.getCardsInHand().get(eCardNo.SecondCard.getCardNo()).geteRank() == h.getCardsInHand()
-						.get(eCardNo.ThirdCard.getCardNo()).geteRank())
-				&& (h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteRank() == h.getCardsInHand()
-						.get(eCardNo.FourthCard.getCardNo()).geteRank())
-				&& (h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteRank() == h.getCardsInHand()
-						.get(eCardNo.FifthCard.getCardNo()).geteRank())) {
+		if ((h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank().getiRankNbr() != 14)
+				&& (h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank().getiRankNbr() == h.getCardsInHand()
+				.get(eCardNo.SecondCard.getCardNo()).geteRank().getiRankNbr()-1)
+				&& (h.getCardsInHand().get(eCardNo.SecondCard.getCardNo()).geteRank().getiRankNbr() == h.getCardsInHand()
+						.get(eCardNo.ThirdCard.getCardNo()).geteRank().getiRankNbr()-1)
+				&& (h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteRank().getiRankNbr() == h.getCardsInHand()
+						.get(eCardNo.FourthCard.getCardNo()).geteRank().getiRankNbr()-1)
+				&& (h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteRank().getiRankNbr() == h.getCardsInHand()
+						.get(eCardNo.FifthCard.getCardNo()).geteRank().getiRankNbr()-1)) {
 
 			hs.setHandStrength(eHandStrength.Straight);
 			hs.setHiHand(h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank());
