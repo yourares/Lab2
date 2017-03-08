@@ -71,11 +71,11 @@ public class TestHands {
 				h.getHandScore().getHandStrength().getHandStrength());
 		
 		//	HI hand better be 'Five'
-		assertEquals(eRank.FIVE.getiRankNbr(),
+		assertEquals(eRank.TEN.getiRankNbr(),
 				h.getHandScore().getHiHand().getiRankNbr());
 		
 		//	LO hand better be 'Three'
-		assertEquals(eRank.THREE.getiRankNbr(),
+		assertEquals(eRank.SIX.getiRankNbr(),
 				h.getHandScore().getLoHand().getiRankNbr());
 		
 		//	Full House has no kickers.
