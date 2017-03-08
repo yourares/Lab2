@@ -24,6 +24,52 @@ public class TestHands {
 		assertEquals(eHandStrength.RoyalFlush.getHandStrength(),
 				h.getHandScore().getHandStrength().getHandStrength());
 		
+		//	HI hand better be 'Ace'
+		assertEquals(eRank.ACE.getiRankNbr(),
+				h.getHandScore().getHiHand().getiRankNbr());
+		
+		//	LO hand better be 'Ten'
+		assertEquals(eRank.TEN.getiRankNbr(),
+				h.getHandScore().getLoHand().getiRankNbr());
+		
+		//	Full House has no kickers.
+		assertEquals(0,h.getHandScore().getKickers().size());
+		
+	}
+	@Test
+	public void TestStraightFlush(){
+		
+		Hand h = new Hand();
+		h.AddCardToHand(new Card(eRank.NINE,eSuit.CLUBS));
+		h.AddCardToHand(new Card(eRank.TEN,eSuit.CLUBS));
+		h.AddCardToHand(new Card(eRank.JACK,eSuit.CLUBS));
+		h.AddCardToHand(new Card(eRank.QUEEN,eSuit.CLUBS));
+		h.AddCardToHand(new Card(eRank.KING,eSuit.CLUBS));		
+		h.EvaluateHand();
+		
+			//Hand better be a StraightFlush
+			assertEquals(eHandStrength.StraightFlush.getHandStrength(),
+					h.getHandScore().getHandStrength().getHandStrength());
+			
+			
+			assertEquals(eRank.KING.getiRankNbr(),
+					h.getHandScore().getHiHand().getiRankNbr());
+			
+	}
+	@Test
+	public void TestHandStraight(){
+		Hand h = new Hand();
+		h.AddCardToHand(new Card(eRank.SIX,eSuit.DIAMONDS));
+		h.AddCardToHand(new Card(eRank.SEVEN,eSuit.HEARTS));
+		h.AddCardToHand(new Card(eRank.EIGHT,eSuit.CLUBS));
+		h.AddCardToHand(new Card(eRank.NINE,eSuit.DIAMONDS));
+		h.AddCardToHand(new Card(eRank.TEN,eSuit.SPADES));		
+		h.EvaluateHand();
+		
+		//	Hand better be a Royal Flush
+		assertEquals(eHandStrength.Straight.getHandStrength(),
+				h.getHandScore().getHandStrength().getHandStrength());
+		
 		//	HI hand better be 'Five'
 		assertEquals(eRank.FIVE.getiRankNbr(),
 				h.getHandScore().getHiHand().getiRankNbr());
@@ -66,6 +112,67 @@ public class TestHands {
 		assertEquals(eHandStrength.FourOfAKind.getHandStrength(),
 				h.getHandScore().getHandStrength().getHandStrength());	
 	}
+	@Test
+	public void TestHandThreeOfAKind() {
+		
+		Hand h = new Hand();
+		h.AddCardToHand(new Card(eRank.FOUR,eSuit.CLUBS));
+		h.AddCardToHand(new Card(eRank.FOUR,eSuit.DIAMONDS));
+		h.AddCardToHand(new Card(eRank.FOUR,eSuit.SPADES));
+		h.AddCardToHand(new Card(eRank.FIVE,eSuit.HEARTS));
+		h.AddCardToHand(new Card(eRank.NINE,eSuit.SPADES));		
+		h.EvaluateHand();
+		
+		
+		assertEquals(eHandStrength.ThreeOfAKind.getHandStrength(),
+				h.getHandScore().getHandStrength().getHandStrength());
+		
+		
+		assertEquals(eRank.FOUR.getiRankNbr(),
+				h.getHandScore().getHiHand().getiRankNbr());
+		
+
+		assertEquals(0,h.getHandScore().getKickers().size());
+}
+	@Test
+	public void TestTwoPair() {
+		
+		Hand h = new Hand();
+		h.AddCardToHand(new Card(eRank.FOUR,eSuit.CLUBS));
+		h.AddCardToHand(new Card(eRank.FOUR,eSuit.DIAMONDS));
+		h.AddCardToHand(new Card(eRank.FIVE,eSuit.SPADES));
+		h.AddCardToHand(new Card(eRank.FIVE,eSuit.HEARTS));
+		h.AddCardToHand(new Card(eRank.NINE,eSuit.SPADES));		
+		h.EvaluateHand();
+		
+		
+		h.AddCardToHand(new Card(eRank.FOUR,eSuit.CLUBS));
+		h.AddCardToHand(new Card(eRank.FOUR,eSuit.DIAMONDS));
+		h.AddCardToHand(new Card(eRank.FIVE,eSuit.SPADES));
+		h.AddCardToHand(new Card(eRank.NINE,eSuit.HEARTS));
+		h.AddCardToHand(new Card(eRank.NINE,eSuit.SPADES));		
+		h.EvaluateHand();
+		
+		h.AddCardToHand(new Card(eRank.FOUR,eSuit.CLUBS));
+		h.AddCardToHand(new Card(eRank.FIVE,eSuit.DIAMONDS));
+		h.AddCardToHand(new Card(eRank.FIVE,eSuit.SPADES));
+		h.AddCardToHand(new Card(eRank.NINE,eSuit.HEARTS));
+		h.AddCardToHand(new Card(eRank.NINE,eSuit.SPADES));		
+		h.EvaluateHand();
+		
+		assertEquals(eHandStrength.TwoPair.getHandStrength(),
+				h.getHandScore().getHandStrength().getHandStrength());
+		
+		
+		assertEquals(eRank.FIVE.getiRankNbr(),
+				h.getHandScore().getHiHand().getiRankNbr());
+		
+		assertEquals(eRank.FOUR.getiRankNbr(),
+				h.getHandScore().getLoHand().getiRankNbr());
+		
+
+		assertEquals(0,h.getHandScore().getKickers().size());
+}
 	@Test
 	public void TestHandPair(){
 		Hand h = new Hand();
@@ -153,7 +260,7 @@ public class TestHands {
 		h.AddCardToHand(new Card(eRank.NINE,eSuit.SPADES));		
 		h.EvaluateHand();
 		
-		//	Hand better be a full house
+		//	Hand better be a HandHighCard
 		assertEquals(eHandStrength.HighCard.getHandStrength(),
 				h.getHandScore().getHandStrength().getHandStrength());
 		
@@ -165,6 +272,46 @@ public class TestHands {
 		assertEquals(eRank.FOUR.getiRankNbr(),
 				h.getHandScore().getLoHand().getiRankNbr());
 	}	
+	@Test
+	public void TestAcesandEights() {
+		
+		Hand h = new Hand();
+		h.AddCardToHand(new Card(eRank.EIGHT,eSuit.CLUBS));
+		h.AddCardToHand(new Card(eRank.EIGHT,eSuit.DIAMONDS));
+		h.AddCardToHand(new Card(eRank.NINE,eSuit.CLUBS));
+		h.AddCardToHand(new Card(eRank.ACE,eSuit.DIAMONDS));
+		h.AddCardToHand(new Card(eRank.ACE,eSuit.SPADES));		
+		h.EvaluateHand();
+		assertEquals(eHandStrength.AcesAndEights.getHandStrength(),
+				h.getHandScore().getHandStrength().getHandStrength());
+		
+		
+		assertEquals(eRank.FOUR.getiRankNbr(),
+				h.getHandScore().getHiHand().getiRankNbr());
+		
+
+		assertEquals(4,h.getHandScore().getKickers().size());
+	}		
+	@Test
+	public void TestAcesandEights2() {
+		
+		Hand h = new Hand();
+		h.AddCardToHand(new Card(eRank.FOUR,eSuit.CLUBS));
+		h.AddCardToHand(new Card(eRank.EIGHT,eSuit.DIAMONDS));
+		h.AddCardToHand(new Card(eRank.EIGHT,eSuit.CLUBS));
+		h.AddCardToHand(new Card(eRank.ACE,eSuit.DIAMONDS));
+		h.AddCardToHand(new Card(eRank.ACE,eSuit.SPADES));		
+		h.EvaluateHand();
+		assertEquals(eHandStrength.AcesAndEights.getHandStrength(),
+				h.getHandScore().getHandStrength().getHandStrength());
+		
+		
+		assertEquals(eRank.ACE.getiRankNbr(),
+				h.getHandScore().getHiHand().getiRankNbr());
+		
+
+		assertEquals(4,h.getHandScore().getKickers().size());
+	}
 	@Test
 	public void TestFullHouse() {
 		
@@ -217,8 +364,6 @@ public class TestHands {
 		assertEquals(eRank.THREE.getiRankNbr(),
 				h.getHandScore().getLoHand().getiRankNbr());
 		
-		//	Full House has no kickers.
-		assertEquals(0,h.getHandScore().getKickers().size());
 		
 		
 		

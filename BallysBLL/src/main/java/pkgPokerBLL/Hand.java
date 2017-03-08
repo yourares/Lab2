@@ -342,22 +342,18 @@ public class Hand {
 
 		if ((h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank().getiRankNbr() != h.getCardsInHand()
 				.get(eCardNo.SecondCard.getCardNo()).geteRank().getiRankNbr())
-				&& (h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteSuit() != h.getCardsInHand()
-						.get(eCardNo.SecondCard.getCardNo()).geteSuit())
+
 				&& (h.getCardsInHand().get(eCardNo.SecondCard.getCardNo()).geteRank().getiRankNbr() != h
 						.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteRank().getiRankNbr())
-				&& (h.getCardsInHand().get(eCardNo.SecondCard.getCardNo()).geteSuit() != h.getCardsInHand()
-						.get(eCardNo.ThirdCard.getCardNo()).geteSuit())
+
 				&& (h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteRank().getiRankNbr() != h.getCardsInHand()
 						.get(eCardNo.FourthCard.getCardNo()).geteRank().getiRankNbr())
-				&& (h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteSuit() != h.getCardsInHand()
-						.get(eCardNo.FourthCard.getCardNo()).geteSuit())
+
 				&& (h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteRank().getiRankNbr() != h
-						.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank().getiRankNbr())
-				&& (h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteSuit() != h.getCardsInHand()
-						.get(eCardNo.FifthCard.getCardNo()).geteSuit())) {
+						.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank().getiRankNbr())) {
 			hs.setHandStrength(eHandStrength.HighCard);
 			hs.setHiHand(h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank());
+			
 			hs.setKickers(kickers);
 			return true;
 		}
