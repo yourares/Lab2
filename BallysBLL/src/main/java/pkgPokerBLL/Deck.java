@@ -22,7 +22,6 @@ public class Deck {
 	
 	public Card DrawCard()
 	{
-		//Finish: Implement this method... should draw a card from the deck.
 		
 		return DeckCards.remove(0);
 	}

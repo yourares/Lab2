@@ -152,7 +152,6 @@ public class Hand {
 		return false;
 	}
 
-	// TODO: Implement This Method
 	public static boolean isHandFlush(Hand h, HandScore hs) {
 
 		ArrayList<Card> kickers = new ArrayList<Card>();
@@ -181,14 +180,26 @@ public class Hand {
 		ArrayList<Card> kickers = new ArrayList<Card>();
 
 		if ((h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank().getiRankNbr() != 14)
-				&& (h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank().getiRankNbr() == h.getCardsInHand()
-				.get(eCardNo.SecondCard.getCardNo()).geteRank().getiRankNbr()-1)
-				&& (h.getCardsInHand().get(eCardNo.SecondCard.getCardNo()).geteRank().getiRankNbr() == h.getCardsInHand()
-						.get(eCardNo.ThirdCard.getCardNo()).geteRank().getiRankNbr()-1)
-				&& (h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteRank().getiRankNbr() == h.getCardsInHand()
-						.get(eCardNo.FourthCard.getCardNo()).geteRank().getiRankNbr()-1)
-				&& (h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteRank().getiRankNbr() == h.getCardsInHand()
-						.get(eCardNo.FifthCard.getCardNo()).geteRank().getiRankNbr()-1)) {
+				&& (h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank()
+						.getiRankNbr() == h.getCardsInHand().get(eCardNo.SecondCard.getCardNo()).geteRank()
+								.getiRankNbr() - 1)
+				&& (h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteSuit() != h.getCardsInHand()
+						.get(eCardNo.SecondCard.getCardNo()).geteSuit())
+				&& (h.getCardsInHand().get(eCardNo.SecondCard.getCardNo()).geteRank()
+						.getiRankNbr() == h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteRank().getiRankNbr()
+								- 1)
+				&& (h.getCardsInHand().get(eCardNo.SecondCard.getCardNo()).geteSuit() != h.getCardsInHand()
+						.get(eCardNo.ThirdCard.getCardNo()).geteSuit())
+				&& (h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteRank()
+						.getiRankNbr() == h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteRank()
+								.getiRankNbr() - 1)
+				&& (h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteSuit() != h.getCardsInHand()
+						.get(eCardNo.FourthCard.getCardNo()).geteSuit())
+				&& (h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteRank()
+						.getiRankNbr() == h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank().getiRankNbr()
+								- 1)
+				&& (h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteSuit() != h.getCardsInHand()
+						.get(eCardNo.FifthCard.getCardNo()).geteSuit())) {
 
 			hs.setHandStrength(eHandStrength.Straight);
 			hs.setHiHand(h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank());
@@ -325,7 +336,6 @@ public class Hand {
 		return false;
 	}
 
-	// TODO: Implement This Method
 	public static boolean isHandHighCard(Hand h, HandScore hs) {
 
 		ArrayList<Card> kickers = new ArrayList<Card>();
