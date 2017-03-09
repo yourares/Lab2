@@ -65,20 +65,17 @@ public class TestHands {
 		h.AddCardToHand(new Card(eRank.TEN,eSuit.SPADES));		
 		h.EvaluateHand();
 		
-		//	Hand better be a Royal Flush
+		//	Hand better be a Hand Straight
 		assertEquals(eHandStrength.Straight.getHandStrength(),
 				h.getHandScore().getHandStrength().getHandStrength());
 		
-		//	HI hand better be 'Five'
+		//	HI hand better be 'Ten'
 		assertEquals(eRank.TEN.getiRankNbr(),
 				h.getHandScore().getHiHand().getiRankNbr());
 		
-		//	LO hand better be 'Three'
+		//	LO hand better be 'Six'
 		assertEquals(eRank.SIX.getiRankNbr(),
 				h.getHandScore().getLoHand().getiRankNbr());
-		
-		//	Full House has no kickers.
-		assertEquals(0,h.getHandScore().getKickers().size());
 		
 	}
 	@Test
