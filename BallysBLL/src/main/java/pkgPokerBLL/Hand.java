@@ -83,7 +83,7 @@ public class Hand {
 	}
 
 	public static boolean isHandRoyalFlush(Hand h, HandScore hs) {
-		boolean isHandRoyalFlush = false; 
+		boolean isHandRoyalFlush = false;
 		ArrayList<Card> kickers = new ArrayList<Card>();
 
 		if ((h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank().getiRankNbr() == 14)) {
@@ -148,7 +148,7 @@ public class Hand {
 	}
 
 	public static boolean isHandFlush(Hand h, HandScore hs) {
-		boolean isHandFlush = false; 
+		boolean isHandFlush = false;
 		ArrayList<Card> kickers = new ArrayList<Card>();
 		if ((h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteSuit() == h.getCardsInHand()
 				.get(eCardNo.SecondCard.getCardNo()).geteSuit())
@@ -170,7 +170,7 @@ public class Hand {
 
 	// TODO: Implement This Method
 	public static boolean isHandStraight(Hand h, HandScore hs) {
-		boolean isHandStraight = false; 
+		boolean isHandStraight = false;
 		ArrayList<Card> kickers = new ArrayList<Card>();
 
 		if ((h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank().getiRankNbr() != 10)
@@ -185,7 +185,7 @@ public class Hand {
 								.getiRankNbr() - 1)
 				&& (h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteRank()
 						.getiRankNbr() == h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank().getiRankNbr()
-								- 1)){
+								- 1)) {
 
 			hs.setHandStrength(eHandStrength.Straight);
 			hs.setHiHand(h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank());
@@ -322,7 +322,7 @@ public class Hand {
 	}
 
 	public static boolean isHandHighCard(Hand h, HandScore hs) {
-boolean isHandHighCard = false; 
+		boolean isHandHighCard = false;
 		ArrayList<Card> kickers = new ArrayList<Card>();
 
 		if ((h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank().getiRankNbr() != h.getCardsInHand()
@@ -354,7 +354,10 @@ boolean isHandHighCard = false;
 				&& (h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteRank() == h.getCardsInHand()
 						.get(eCardNo.FifthCard.getCardNo()).geteRank())
 				&& (h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteRank().getiRankNbr() == 14)
-				&& (h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteRank().getiRankNbr() != (8 & 14))) {
+				&& (h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteRank()!= 
+				h.getCardsInHand().get(eCardNo.FourthCard.getCardNo()).geteRank()
+				&& (h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteRank()!= 
+						h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank()))) {
 			isAcesAndEights = true;
 			hs.setHandStrength(eHandStrength.AcesAndEights);
 			hs.setHiHand(h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteRank());

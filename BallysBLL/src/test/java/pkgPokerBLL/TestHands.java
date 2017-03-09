@@ -24,7 +24,8 @@ public class TestHands {
 		assertEquals(eHandStrength.RoyalFlush.getHandStrength(),
 				h.getHandScore().getHandStrength().getHandStrength());
 		
-
+		assertEquals(eRank.ACE.getiRankNbr(),
+				h.getHandScore().getHiHand().getiRankNbr());
 		
 	}
 	@Test
@@ -41,7 +42,8 @@ public class TestHands {
 			//Hand better be a StraightFlush
 			assertEquals(eHandStrength.StraightFlush.getHandStrength(),
 					h.getHandScore().getHandStrength().getHandStrength());
-
+			assertEquals(eRank.KING.getiRankNbr(),
+					h.getHandScore().getHiHand().getiRankNbr());
 			
 	}
 	@Test
@@ -246,7 +248,8 @@ public class TestHands {
 		assertEquals(eHandStrength.AcesAndEights.getHandStrength(),
 				h.getHandScore().getHandStrength().getHandStrength());
 
-	}		
+	}	
+	
 	@Test
 	public void TestAcesandEights2() {
 		
@@ -261,6 +264,7 @@ public class TestHands {
 				h.getHandScore().getHandStrength().getHandStrength());
 
 	}
+
 	@Test
 	public void TestFullHouse() {
 		
