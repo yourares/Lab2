@@ -83,7 +83,7 @@ public class Hand {
 	}
 
 	public static boolean isHandRoyalFlush(Hand h, HandScore hs) {
-
+		boolean isHandRoyalFlush = false; 
 		ArrayList<Card> kickers = new ArrayList<Card>();
 
 		if ((h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank().getiRankNbr() == 14)) {
@@ -148,7 +148,7 @@ public class Hand {
 	}
 
 	public static boolean isHandFlush(Hand h, HandScore hs) {
-
+		boolean isHandFlush = false; 
 		ArrayList<Card> kickers = new ArrayList<Card>();
 		if ((h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteSuit() == h.getCardsInHand()
 				.get(eCardNo.SecondCard.getCardNo()).geteSuit())
@@ -170,7 +170,7 @@ public class Hand {
 
 	// TODO: Implement This Method
 	public static boolean isHandStraight(Hand h, HandScore hs) {
-
+		boolean isHandStraight = false; 
 		ArrayList<Card> kickers = new ArrayList<Card>();
 
 		if ((h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank().getiRankNbr() != 10)
@@ -322,7 +322,7 @@ public class Hand {
 	}
 
 	public static boolean isHandHighCard(Hand h, HandScore hs) {
-
+boolean isHandHighCard = false; 
 		ArrayList<Card> kickers = new ArrayList<Card>();
 
 		if ((h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank().getiRankNbr() != h.getCardsInHand()
