@@ -92,7 +92,6 @@ public class Hand {
 			hs.setHiHand(h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank());
 			hs.setLoHand(h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank());
 			hs.setKickers(kickers);
-			return true;
 		}
 
 		return false;
@@ -164,7 +163,6 @@ public class Hand {
 			hs.setHiHand(h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank());
 			hs.setLoHand(h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank());
 			hs.setKickers(kickers);
-			return true;
 		}
 
 		return false;
@@ -193,7 +191,6 @@ public class Hand {
 			hs.setHiHand(h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank());
 			hs.setLoHand(h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank());
 			hs.setKickers(kickers);
-			return true;
 		}
 
 		return false;
@@ -343,7 +340,6 @@ public class Hand {
 			hs.setHiHand(h.getCardsInHand().get(eCardNo.FifthCard.getCardNo()).geteRank());
 
 			hs.setKickers(kickers);
-			return true;
 		}
 		return false;
 	}

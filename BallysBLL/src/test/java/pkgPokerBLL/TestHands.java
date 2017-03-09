@@ -31,8 +31,7 @@ public class TestHands {
 		//	LO hand better be 'Ten'
 		assertEquals(eRank.TEN.getiRankNbr(),
 				h.getHandScore().getLoHand().getiRankNbr());
-		
-		//	Full House has no kickers.
+
 		
 	}
 	@Test
